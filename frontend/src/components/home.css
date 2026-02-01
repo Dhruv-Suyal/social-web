@@ -1,0 +1,188 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f2f4f8;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 500px;
+  margin: auto;
+}
+
+/* CREATE POST */
+.create-post {
+  background: #fff;
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  margin-bottom: 20px;
+}
+
+.tabs {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.tabs span {
+  padding: 6px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  color: #777;
+  font-weight: 600;
+}
+
+.tabs .active {
+  background: #1877f2;
+  color: #fff;
+}
+
+.create-post input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #eee;
+  padding: 10px 0;
+  outline: none;
+  margin-bottom: 10px;
+}
+
+.post-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icons span {
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+.promote {
+  background: none;
+  border: none;
+  color: #1877f2;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.post-btn {
+  background: #1877f2;
+  color: white;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 20px;
+}
+
+/* POST CARD */
+.post-card {
+  background: white;
+  border-radius: 15px;
+  padding: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+.post-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user-info {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.avatar {
+  font-size: 28px;
+}
+
+.user-info h3 {
+  margin: 0;
+}
+
+.user-info p {
+  margin: 0;
+  font-size: 12px;
+  color: gray;
+}
+
+.follow-btn {
+  background: #1877f2;
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 20px;
+}
+
+.title {
+  margin-top: 15px;
+}
+
+.subtitle {
+  color: #444;
+  margin-bottom: 15px;
+}
+
+/* EARNINGS */
+.earnings {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.earning-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f5f7fa;
+  padding: 10px;
+  border-radius: 12px;
+}
+
+.left {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.icon {
+  font-size: 20px;
+}
+
+.name {
+  margin: 0;
+  font-weight: bold;
+}
+
+.tag {
+  font-size: 12px;
+  color: gray;
+}
+
+.points {
+  font-weight: bold;
+}
+
+.green {
+  color: #2e7d32;
+}
+
+/* FLOAT BUTTON */
+.float-btn {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background: #1877f2;
+  color: white;
+  border: none;
+  padding: 12px 16px;
+  border-radius: 50%;
+  font-size: 18px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
