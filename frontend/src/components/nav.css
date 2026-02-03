@@ -43,6 +43,13 @@
   display: block;
 }
 
+.nav-profile-img {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: block;
+}
+
 .nav-text {
   font-size: 12px;
   white-space: nowrap;

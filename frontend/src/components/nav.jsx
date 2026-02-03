@@ -1,10 +1,7 @@
 
 import './nav.css';
-import { useState } from 'react';
 
-export function Navbar(){
-    const [activeTab, setActiveTab] = useState('posts');
-
+export function Navbar({ activeTab, setActiveTab }){
     return(
         <nav className="navbar">
             <div className="nav-container">
