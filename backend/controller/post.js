@@ -1,4 +1,4 @@
-const { cloudinary_js_config } = require("../config/cloudinary");
+const cloudinary = require("../config/cloudinary");
 const Post = require("../model/post");
 const streamifier = require("streamifier");
 
@@ -11,7 +11,7 @@ exports.createPost = async (req, res) => {
     if (req.files && req.files.length > 0) {
       for (let file of req.files) {
         const result = await new Promise((resolve, reject) => {
-          const stream = cloudinary_js_config.uploader.upload_stream(
+          const stream = cloudinary.uploader.upload_stream(
             { folder: "posts" },
             (error, result) => {
               if (error) reject(error);
