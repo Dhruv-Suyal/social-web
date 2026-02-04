@@ -8,7 +8,7 @@ exports.createPost = async (req, res) => {
     const { text } = req.body;
 
     let imageUrls = [];
-
+    console.log("Cloudinary:", process.env.CLOUD_NAME);
     if (req.files && req.files.length > 0) {
       for (let file of req.files) {
         const result = await new Promise((resolve, reject) => {
@@ -42,6 +42,13 @@ exports.createPost = async (req, res) => {
     res.status(201).json(populatedPost);
 
   } catch (err) {
+    try {
+   // cloudinary upload
+} catch (err) {
+   console.log("UPLOAD ERROR:", err);
+   return res.status(500).json({ error: err.message });
+}
+
     res.status(500).json({ message: err.message });
   }
 };
