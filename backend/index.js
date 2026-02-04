@@ -1,5 +1,5 @@
 // Load environment variables from configuration file
-require("dotenv").config({path:'contact.env'});
+require("dotenv").config();
 const express = require('express');
 const cors = require('cors');
 const { default: mongoose } = require("mongoose");
