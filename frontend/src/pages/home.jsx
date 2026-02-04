@@ -229,12 +229,20 @@ export function Home(){
                                 )}
 
                                 <div className="post-stats">
-                                    <span>👍 {post.likes?.length || 0} Likes</span>
                                     <span 
-                                        onClick={() => setShowComments({
-                                            ...showComments, 
-                                            [post._id]: !showComments[post._id]
-                                        })}
+                                        onClick={() => {
+                                            setShowModal({ likes: post.likes || [] });
+                                            setModalType('likes');
+                                        }}
+                                        style={{ cursor: 'pointer' }}
+                                    >
+                                        👍 {post.likes?.length || 0} Likes
+                                    </span>
+                                    <span 
+                                        onClick={() => {
+                                            setShowModal({ comments: post.comments || [] });
+                                            setModalType('comments');
+                                        }}
                                         style={{ cursor: 'pointer' }}
                                     >
                                         💬 {post.comments?.length || 0} Comments
@@ -345,7 +353,7 @@ export function Home(){
                                         <div key={idx} className="modal-comment-item">
                                             <span className="modal-avatar">👤</span>
                                             <div className="modal-comment-content">
-                                                <p className="modal-comment-name">{comment.commentUser.userName}</p>
+                                                <p className="modal-comment-name">{comment.user?.userName || comment.commentUser?.userName || 'Unknown'}</p>
                                                 <p className="modal-comment-text">{comment.commentText}</p>
                                             </div>
                                         </div>
