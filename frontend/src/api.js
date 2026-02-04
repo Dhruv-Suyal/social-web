@@ -2,7 +2,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://localhost:5000",
+  baseURL: "https://social-web-f9rv.onrender.com/",
 });
 
 // Attach token automatically
