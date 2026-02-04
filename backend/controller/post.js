@@ -1,4 +1,6 @@
+const { cloudinary_js_config } = require("../config/cloudinary");
 const Post = require("../model/post");
+const streamifier = require("streamifier");
 
 exports.createPost = async (req, res) => {
   try {
@@ -8,7 +10,20 @@ exports.createPost = async (req, res) => {
     let imageUrls = [];
 
     if (req.files && req.files.length > 0) {
-      imageUrls = req.files.map(file => `http://localhost:${process.env.PORT}/uploads/${file.filename}`);
+      for (let file of req.files) {
+        const result = await new Promise((resolve, reject) => {
+          const stream = cloudinary_js_config.uploader.upload_stream(
+            { folder: "posts" },
+            (error, result) => {
+              if (error) reject(error);
+              else resolve(result);
+            }
+          );
+          streamifier.createReadStream(file.buffer).pipe(stream);
+        });
+
+        imageUrls.push(result.secure_url);
+      }
     }
 
     if (!text && imageUrls.length === 0) {
